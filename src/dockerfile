@@ -8,7 +8,7 @@ LABEL maintainer=rtaylo02
 WORKDIR /helloapp
 
 # Copy source file (located in ./jar of local machine) into /helloapp inside the container
-COPY ./jar/hello.jar /helloapp
+COPY ./jar/helloapp-v2.jar /helloapp
 
 # Run update and upgrade (with -y agreeing to all)
 RUN apt-get update
@@ -18,4 +18,4 @@ RUN apt-get upgrade -y
 RUN apt-get install openjdk-21-jdk openjdk-21-jre -y
 
 # Run executable jar located in /helloapp/hello.jar
-CMD [ "java", "-jar", "hello.jar" ]
+CMD [ "java", "-jar", "helloapp-v2.jar" ]
