@@ -4,18 +4,18 @@ FROM ubuntu
 # Contact details
 LABEL maintainer=rtaylo02
 
-# Change directory into working directory. Folder helloapp is created if not exists.
-WQRKDIR /helloapp
+# Set the working directory and change directory to it. Folder helloapp is created if not exists.
+WORKDIR /helloapp
 
 # Copy source file (located in ./jar of local machine) into /helloapp inside the container
 COPY ./jar/hello.jar /helloapp
 
-# Run update and upgrade
+# Run update and upgrade (with -y agreeing to all)
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 
-# Run openjdk17 and jre17 installation
-RUN apt-get install openjdk-17-jdk openjdk-17-jre
+# Run openjdk17 and jre17 installation (with -y agreeing to all)
+RUN apt-get install openjdk-21-jdk openjdk-21-jre -y
 
 # Run executable jar located in /helloapp/hello.jar
 CMD [ "java", "-jar", "hello.jar" ]
