@@ -12,10 +12,10 @@ COPY ./jar/hello.jar /helloapp
 
 # Run update and upgrade
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 
 # Run openjdk17 and jre17 installation
-RUN apt-get install openjdk-17-jdk openjdk-17-jre
+RUN apt-get install openjdk-21-jdk openjdk-21-jre -y
 
 # Run executable jar located in /helloapp/hello.jar
 CMD [ "java", "-jar", "hello.jar" ]
