@@ -14,7 +14,7 @@ COPY ./jar/helloapp-v2.jar /helloapp
 RUN apt-get update
 RUN apt-get upgrade -y
 
-# Run openjdk17 and jre17 installation (with -y agreeing to all)
+# Run openjdk21 and jre21 installation (with -y agreeing to all)
 RUN apt-get install openjdk-21-jdk openjdk-21-jre -y
 
 # Run executable jar located in /helloapp/hello.jar
