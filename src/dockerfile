@@ -5,7 +5,7 @@ FROM ubuntu
 LABEL maintainer=rtaylo02
 
 # Change directory into working directory. Folder helloapp is created if not exists.
-WQRKDIR /helloapp
+WORKDIR /helloapp
 
 # Copy source file (located in ./jar of local machine) into /helloapp inside the container
 COPY ./jar/hello.jar /helloapp
